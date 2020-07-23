@@ -36,4 +36,11 @@ public class GuessNumberGame {
         }
         return count;
     }
+
+    public boolean isGuessNumberValid(String guessNumber) {
+        if (guessNumber.length() != 4) {
+            return false;
+        }
+        return true;
+    }
 }
