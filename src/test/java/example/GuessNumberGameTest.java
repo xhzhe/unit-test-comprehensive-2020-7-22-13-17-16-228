@@ -31,9 +31,9 @@ public class GuessNumberGameTest {
     }
 
     @Test
-    public void should_return_1A1B_when_guess_given_guess_number_1536_and_answer_1234() {
+    public void should_return_1A1B_when_guess_given_guess_number_1356_and_answer_1234() {
         //given
-        String guessNumber = "1536";
+        String guessNumber = "1356";
         String answer = "1234";
         GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
         //when
