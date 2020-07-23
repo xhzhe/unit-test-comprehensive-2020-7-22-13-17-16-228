@@ -3,6 +3,10 @@ package example;
 public class GuessNumberGame {
     private String answer;
 
+    public GuessNumberGame(AnswerGenerator answerGenerator) {
+        this.answer = answerGenerator.generate();
+    }
+
     public GuessNumberGame(String answer) {
         this.answer = answer;
     }
