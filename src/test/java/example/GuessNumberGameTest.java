@@ -80,9 +80,21 @@ public class GuessNumberGameTest {
     }
 
     @Test
-    public void should_return_Wrong_Input_Input_again_when_check_number_valid_given_12() {
+    public void should_return_false_when_check_number_valid_given_12() {
         //given
         String guessNumber = "12";
+        RandomNumberStringGenerator randomNumberStringGenerator = new RandomNumberStringGenerator();
+        GuessNumberGame guessNumberGame = new GuessNumberGame(randomNumberStringGenerator);
+        //when
+        boolean result = guessNumberGame.isGuessNumberValid(guessNumber);
+        //then
+        assertFalse(result);
+    }
+
+    @Test
+    public void should_return_false_when_check_number_valid_given_1123() {
+        //given
+        String guessNumber = "1123";
         RandomNumberStringGenerator randomNumberStringGenerator = new RandomNumberStringGenerator();
         GuessNumberGame guessNumberGame = new GuessNumberGame(randomNumberStringGenerator);
         //when
