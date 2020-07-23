@@ -1,5 +1,7 @@
 package example;
 
+import java.util.Scanner;
+
 public class GuessNumberGame {
     private final String answer;
 
@@ -9,6 +11,15 @@ public class GuessNumberGame {
 
     public GuessNumberGame(String answer) {
         this.answer = answer;
+    }
+
+    public void play() {
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < 6; i++) {
+            String guessNumber = scanner.next();
+            System.out.println(guess(guessNumber));
+        }
+        System.out.println("game over");
     }
 
     public String guess(String guessNumber) {
