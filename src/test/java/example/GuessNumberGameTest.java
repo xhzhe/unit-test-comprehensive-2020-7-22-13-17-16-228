@@ -115,14 +115,4 @@ public class GuessNumberGameTest {
         assertEquals("Wrong Input，Input again", result);
     }
 
-    @Test
-    public void should_play_game_when_play_given_input() {
-        //given
-        RandomNumberStringGenerator randomNumberStringGenerator = new RandomNumberStringGenerator();
-        GuessNumberGame guessNumberGame = new GuessNumberGame(randomNumberStringGenerator);
-        //when
-        guessNumberGame.play();
-        //then
-        //play normal
-    }
 }
