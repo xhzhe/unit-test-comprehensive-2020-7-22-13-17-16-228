@@ -12,6 +12,9 @@ public class GuessNumberGame {
     }
 
     public String guess(String guessNumber) {
+        if (!isGuessNumberValid(guessNumber)) {
+            return "Wrong Input，Input again";
+        }
         int rightNumberCount = countRightNumber(guessNumber);
         int rightPositionCount = countRightPositionNumber(guessNumber);
         return rightPositionCount + "A" + (rightNumberCount - rightPositionCount) + "B";
