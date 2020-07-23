@@ -3,6 +3,7 @@ package example;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 
 public class GuessNumberGameTest {
@@ -87,6 +88,6 @@ public class GuessNumberGameTest {
         //when
         boolean result = guessNumberGame.isGuessNumberValid(guessNumber);
         //then
-        assertEquals(false, result);
+        assertFalse(result);
     }
 }

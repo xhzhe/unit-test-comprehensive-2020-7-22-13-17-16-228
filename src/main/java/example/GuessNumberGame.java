@@ -1,7 +1,7 @@
 package example;
 
 public class GuessNumberGame {
-    private String answer;
+    private final String answer;
 
     public GuessNumberGame(AnswerGenerator answerGenerator) {
         this.answer = answerGenerator.generate();
@@ -38,9 +38,6 @@ public class GuessNumberGame {
     }
 
     public boolean isGuessNumberValid(String guessNumber) {
-        if (guessNumber.length() != 4) {
-            return false;
-        }
-        return true;
+        return guessNumber.length() == 4;
     }
 }
