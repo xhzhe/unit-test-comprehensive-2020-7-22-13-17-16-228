@@ -102,4 +102,16 @@ public class GuessNumberGameTest {
         //then
         assertFalse(result);
     }
+
+    @Test
+    public void should_return_wrong_message_when_guess_number_given_1123() {
+        //given
+        String guessNumber = "1123";
+        RandomNumberStringGenerator randomNumberStringGenerator = new RandomNumberStringGenerator();
+        GuessNumberGame guessNumberGame = new GuessNumberGame(randomNumberStringGenerator);
+        //when
+        String result = guessNumberGame.guess(guessNumber);
+        //then
+        assertEquals("Wrong Input，Input again", result);
+    }
 }
