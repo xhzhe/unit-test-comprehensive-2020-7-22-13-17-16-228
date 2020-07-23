@@ -10,7 +10,8 @@ public class GuessNumberGame {
     public String guess(String guessNumber) {
         if (answer.equals(guessNumber)) {
             return "4A0B";
+        } else {
+            return "0A0B";
         }
-        return null;
     }
 }
