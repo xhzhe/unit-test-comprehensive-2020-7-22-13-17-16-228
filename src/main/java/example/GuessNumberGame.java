@@ -55,10 +55,8 @@ public class GuessNumberGame {
             return false;
         }
         for (int i = 0; i < guessNumber.length(); i++) {
-            for (int j = i + 1; j < guessNumber.length(); j++) {
-                if (guessNumber.charAt(i) == guessNumber.charAt(j)) {
-                    return false;
-                }
+            if (guessNumber.substring(i + 1).indexOf(guessNumber.charAt(i)) != -1) {
+                return false;
             }
         }
         return true;
