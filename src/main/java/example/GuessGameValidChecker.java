@@ -25,8 +25,8 @@ public class GuessGameValidChecker implements ValidChecker {
     }
 
     private boolean isAllNumber(String number) {
-        for (int i = 0; i < number.length(); i++) {
-            if (!Character.isDigit(number.charAt(i))) {
+        for (int index = 0; index < number.length(); index++) {
+            if (!Character.isDigit(number.charAt(index))) {
                 return false;
             }
         }

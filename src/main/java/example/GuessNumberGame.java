@@ -13,7 +13,7 @@ public class GuessNumberGame {
 
     public void play() {
         Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < 6; i++) {
+        for (int times = 0; times < 6; times++) {
             String guessNumber = scanner.next();
             System.out.println(guess(guessNumber));
         }
@@ -31,8 +31,8 @@ public class GuessNumberGame {
 
     private int countRightNumber(String guessNumber) {
         int count = 0;
-        for (int i = 0; i < guessNumber.length(); i++) {
-            if (this.answer.indexOf(guessNumber.charAt(i)) != -1) {
+        for (int index = 0; index < guessNumber.length(); index++) {
+            if (this.answer.indexOf(guessNumber.charAt(index)) != -1) {
                 count++;
             }
         }
@@ -41,8 +41,8 @@ public class GuessNumberGame {
 
     private int countRightPositionNumber(String guessNumber) {
         int count = 0;
-        for (int i = 0; i < guessNumber.length(); i++) {
-            if (this.answer.charAt(i) == guessNumber.charAt(i)) {
+        for (int index = 0; index < guessNumber.length(); index++) {
+            if (this.answer.charAt(index) == guessNumber.charAt(index)) {
                 count++;
             }
         }
