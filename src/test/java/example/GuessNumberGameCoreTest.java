@@ -7,17 +7,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 
-public class GuessNumberGameTest {
+public class GuessNumberGameCoreTest {
     @Test
     public void should_return_4A0B_when_guess_given_guess_number_1234_and_answer_1234() {
         //given
         String guessNumber = "1234";
         AnswerGenerator answerGenerator = mock(AnswerGenerator.class);
         given(answerGenerator.generate()).willReturn("1234");
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator,new GuessGameValidChecker());
+        GuessNumberGameCore guessNumberGame = new GuessNumberGameCore(answerGenerator,new GuessGameValidChecker());
         //when
         String result = guessNumberGame.guess(guessNumber);
         //then
@@ -30,7 +29,7 @@ public class GuessNumberGameTest {
         String guessNumber = "5678";
         AnswerGenerator answerGenerator = mock(AnswerGenerator.class);
         given(answerGenerator.generate()).willReturn("1234");
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator,new GuessGameValidChecker());
+        GuessNumberGameCore guessNumberGame = new GuessNumberGameCore(answerGenerator,new GuessGameValidChecker());
         //when
         String result = guessNumberGame.guess(guessNumber);
         //then
@@ -43,7 +42,7 @@ public class GuessNumberGameTest {
         String guessNumber = "1356";
         AnswerGenerator answerGenerator = mock(AnswerGenerator.class);
         given(answerGenerator.generate()).willReturn("1234");
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator,new GuessGameValidChecker());
+        GuessNumberGameCore guessNumberGame = new GuessNumberGameCore(answerGenerator,new GuessGameValidChecker());
         //when
         String result = guessNumberGame.guess(guessNumber);
         //then
@@ -56,7 +55,7 @@ public class GuessNumberGameTest {
         String guessNumber = "1243";
         AnswerGenerator answerGenerator = mock(AnswerGenerator.class);
         given(answerGenerator.generate()).willReturn("1234");
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator,new GuessGameValidChecker());
+        GuessNumberGameCore guessNumberGame = new GuessNumberGameCore(answerGenerator,new GuessGameValidChecker());
         //when
         String result = guessNumberGame.guess(guessNumber);
         //then
@@ -69,7 +68,7 @@ public class GuessNumberGameTest {
         String guessNumber = "4321";
         AnswerGenerator answerGenerator = mock(AnswerGenerator.class);
         given(answerGenerator.generate()).willReturn("1234");
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator,new GuessGameValidChecker());
+        GuessNumberGameCore guessNumberGame = new GuessNumberGameCore(answerGenerator,new GuessGameValidChecker());
         //when
         String result = guessNumberGame.guess(guessNumber);
         //then
@@ -82,7 +81,7 @@ public class GuessNumberGameTest {
         String guessNumber = "4356";
         AnswerGenerator answerGenerator = mock(AnswerGenerator.class);
         given(answerGenerator.generate()).willReturn("1234");
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator,new GuessGameValidChecker());
+        GuessNumberGameCore guessNumberGame = new GuessNumberGameCore(answerGenerator,new GuessGameValidChecker());
         //when
         String result = guessNumberGame.guess(guessNumber);
         //then
@@ -94,7 +93,7 @@ public class GuessNumberGameTest {
         //given
         String guessNumber = "1123";
         RandomNumberStringGenerator randomNumberStringGenerator = new RandomNumberStringGenerator();
-        GuessNumberGame guessNumberGame = new GuessNumberGame(randomNumberStringGenerator,new GuessGameValidChecker());
+        GuessNumberGameCore guessNumberGame = new GuessNumberGameCore(randomNumberStringGenerator,new GuessGameValidChecker());
         //when
         String result = guessNumberGame.guess(guessNumber);
         //then
