@@ -9,10 +9,6 @@ public class GuessNumberGame {
         this.answer = answerGenerator.generate();
     }
 
-    public GuessNumberGame(String answer) {
-        this.answer = answer;
-    }
-
     public void play() {
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < 6; i++) {

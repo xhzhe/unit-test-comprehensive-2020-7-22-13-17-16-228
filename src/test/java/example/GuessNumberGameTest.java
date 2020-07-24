@@ -2,8 +2,12 @@ package example;
 
 import org.junit.jupiter.api.Test;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 
 public class GuessNumberGameTest {
@@ -11,8 +15,9 @@ public class GuessNumberGameTest {
     public void should_return_4A0B_when_guess_given_guess_number_1234_and_answer_1234() {
         //given
         String guessNumber = "1234";
-        String answer = "1234";
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+        AnswerGenerator answerGenerator= mock(AnswerGenerator.class);
+        given(answerGenerator.generate()).willReturn("1234");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         //when
         String result = guessNumberGame.guess(guessNumber);
         //then
@@ -23,8 +28,9 @@ public class GuessNumberGameTest {
     public void should_return_0A0B_when_guess_given_guess_number_5678_and_answer_1234() {
         //given
         String guessNumber = "5678";
-        String answer = "1234";
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+        AnswerGenerator answerGenerator= mock(AnswerGenerator.class);
+        given(answerGenerator.generate()).willReturn("1234");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         //when
         String result = guessNumberGame.guess(guessNumber);
         //then
@@ -35,8 +41,9 @@ public class GuessNumberGameTest {
     public void should_return_1A1B_when_guess_given_guess_number_1356_and_answer_1234() {
         //given
         String guessNumber = "1356";
-        String answer = "1234";
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+        AnswerGenerator answerGenerator= mock(AnswerGenerator.class);
+        given(answerGenerator.generate()).willReturn("1234");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         //when
         String result = guessNumberGame.guess(guessNumber);
         //then
@@ -47,8 +54,9 @@ public class GuessNumberGameTest {
     public void should_return_2A2B_when_guess_given_guess_number_1243_and_answer_1234() {
         //given
         String guessNumber = "1243";
-        String answer = "1234";
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+        AnswerGenerator answerGenerator= mock(AnswerGenerator.class);
+        given(answerGenerator.generate()).willReturn("1234");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         //when
         String result = guessNumberGame.guess(guessNumber);
         //then
@@ -59,8 +67,9 @@ public class GuessNumberGameTest {
     public void should_return_0A4B_when_guess_given_guess_number_4321_and_answer_1234() {
         //given
         String guessNumber = "4321";
-        String answer = "1234";
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+        AnswerGenerator answerGenerator= mock(AnswerGenerator.class);
+        given(answerGenerator.generate()).willReturn("1234");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         //when
         String result = guessNumberGame.guess(guessNumber);
         //then
@@ -71,8 +80,9 @@ public class GuessNumberGameTest {
     public void should_return_0A2B_when_guess_given_guess_number_4356_and_answer_1234() {
         //given
         String guessNumber = "4356";
-        String answer = "1234";
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+        AnswerGenerator answerGenerator= mock(AnswerGenerator.class);
+        given(answerGenerator.generate()).willReturn("1234");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         //when
         String result = guessNumberGame.guess(guessNumber);
         //then
@@ -126,4 +136,5 @@ public class GuessNumberGameTest {
         //then
         assertFalse(result);
     }
+
 }
