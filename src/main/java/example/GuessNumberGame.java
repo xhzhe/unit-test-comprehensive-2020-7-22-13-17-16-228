@@ -4,9 +4,11 @@ import java.util.Scanner;
 
 public class GuessNumberGame {
     private final String answer;
+    private final ValidChecker validChecker;
 
-    public GuessNumberGame(AnswerGenerator answerGenerator) {
+    public GuessNumberGame(AnswerGenerator answerGenerator, ValidChecker validChecker) {
         this.answer = answerGenerator.generate();
+        this.validChecker = validChecker;
     }
 
     public void play() {
@@ -19,7 +21,7 @@ public class GuessNumberGame {
     }
 
     public String guess(String guessNumber) {
-        if (!isGuessNumberValid(guessNumber)) {
+        if (!validChecker.isValid(guessNumber)) {
             return "Wrong Input，Input again";
         }
         int rightNumberCount = countRightNumber(guessNumber);
@@ -45,29 +47,5 @@ public class GuessNumberGame {
             }
         }
         return count;
-    }
-
-    public boolean isGuessNumberValid(String guessNumber) {
-        if (guessNumber.length() != 4) {
-            return false;
-        }
-        if (!isAllNumber(guessNumber)) {
-            return false;
-        }
-        for (int i = 0; i < guessNumber.length(); i++) {
-            if (guessNumber.substring(i + 1).indexOf(guessNumber.charAt(i)) != -1) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public boolean isAllNumber(String number) {
-        for (int i = 0; i < number.length(); i++) {
-            if (!Character.isDigit(number.charAt(i))) {
-                return false;
-            }
-        }
-        return true;
     }
 }
