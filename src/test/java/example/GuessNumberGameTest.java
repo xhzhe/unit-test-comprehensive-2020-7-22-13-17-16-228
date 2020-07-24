@@ -115,4 +115,15 @@ public class GuessNumberGameTest {
         assertEquals("Wrong Input，Input again", result);
     }
 
+    @Test
+    public void should_return_false_when_check_number_valid_given_abcd() {
+        //given
+        String guessNumber = "abcd";
+        RandomNumberStringGenerator randomNumberStringGenerator = new RandomNumberStringGenerator();
+        GuessNumberGame guessNumberGame = new GuessNumberGame(randomNumberStringGenerator);
+        //when
+        boolean result = guessNumberGame.isGuessNumberValid(guessNumber);
+        //then
+        assertFalse(result);
+    }
 }
