@@ -3,13 +3,7 @@ package example;
 public class GuessGameValidChecker implements ValidChecker {
     @Override
     public boolean isValid(String guessNumber) {
-        if (guessNumber.length() != 4) {
-            return false;
-        }
-        if (!isAllNumber(guessNumber)) {
-            return false;
-        }
-        return !isRepeat(guessNumber);
+        return guessNumber.length() == 4 && isAllNumber(guessNumber) && (!isRepeat(guessNumber));
     }
 
     private boolean isRepeat(String string) {
