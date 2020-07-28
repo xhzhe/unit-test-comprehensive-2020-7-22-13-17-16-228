@@ -1,9 +1,12 @@
 package example;
 
 public class GuessGameValidChecker implements ValidChecker {
+
+    public static final int ANSWER_LENGTH = 4;
+
     @Override
     public boolean isValid(String guessNumber) {
-        return guessNumber.length() == 4 && isAllNumber(guessNumber) && (!isRepeat(guessNumber));
+        return guessNumber.length() == ANSWER_LENGTH && isAllNumber(guessNumber) && (!isRepeat(guessNumber));
     }
 
     private boolean isRepeat(String string) {
