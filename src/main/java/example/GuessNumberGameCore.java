@@ -1,8 +1,10 @@
 package example;
 
-import java.util.Scanner;
-
 public class GuessNumberGameCore {
+    private static final String RIGHT_POSITION_CHARACTER = "A";
+    private static final String WRONG_INPUT_INPUT_AGAIN = "Wrong Input，Input again";
+    private static final String WRONG_INPUT_MESSAGE = WRONG_INPUT_INPUT_AGAIN;
+    private static final String RIGHT_CHARACTER_COUNT = "B";
     private final String answer;
     private final ValidChecker validChecker;
 
@@ -13,11 +15,11 @@ public class GuessNumberGameCore {
 
     public String guess(String guessNumber) {
         if (!validChecker.isValid(guessNumber)) {
-            return "Wrong Input，Input again";
+            return WRONG_INPUT_MESSAGE;
         }
         int rightNumberCount = countRightNumber(guessNumber);
         int rightPositionCount = countRightPositionNumber(guessNumber);
-        return rightPositionCount + "A" + (rightNumberCount - rightPositionCount) + "B";
+        return rightPositionCount + RIGHT_POSITION_CHARACTER + (rightNumberCount - rightPositionCount) + RIGHT_CHARACTER_COUNT;
     }
 
     private int countRightNumber(String guessNumber) {

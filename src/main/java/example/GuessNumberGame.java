@@ -3,6 +3,7 @@ package example;
 import java.util.Scanner;
 
 public class GuessNumberGame implements Game {
+    private static final int GAME_TIMES = 6;
     private final GuessNumberGameCore guessNumberGameCore;
 
     GuessNumberGame(GuessNumberGameCore guessNumberGameCore) {
@@ -12,7 +13,7 @@ public class GuessNumberGame implements Game {
     @Override
     public void play() {
         Scanner scanner = new Scanner(System.in);
-        for (int times = 0; times < 6; times++) {
+        for (int times = 0; times < GAME_TIMES; times++) {
             String guessNumber = scanner.next();
             System.out.println(guessNumberGameCore.guess(guessNumber));
         }

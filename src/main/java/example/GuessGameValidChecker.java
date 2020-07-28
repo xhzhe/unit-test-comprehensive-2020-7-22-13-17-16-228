@@ -2,7 +2,7 @@ package example;
 
 public class GuessGameValidChecker implements ValidChecker {
 
-    public static final int ANSWER_LENGTH = 4;
+    private static final int ANSWER_LENGTH = 4;
 
     @Override
     public boolean isValid(String guessNumber) {
